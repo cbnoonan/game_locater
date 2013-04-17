@@ -3,5 +3,6 @@ class Game < ActiveRecord::Base
   validates :sport,  :presence => true
   validates :location, :presence => true
   validates :number_of_people, :presence => true
+  validates :user, :presence => true
   belongs_to :user
 end

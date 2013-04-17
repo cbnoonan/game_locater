@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @game.title
+
+
+%p
+  %b Sport:
+  = @game.sport
+
+%p
+  %b Location:
+  = @game.location
+
+%p
+  %b Number of people:
+  = @game.number_of_people 
+
+%p
+  %b Organizer
+  = @game.user.name_with_initial 
+
+
+= link_to 'Edit', edit_game_path(@game) |
+= link_to 'Back', games_path

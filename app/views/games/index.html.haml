@@ -1,0 +1,28 @@
+%h1 Listing games
+
+%table
+  %tr
+    %th Name
+    %th Sport
+    %th Location
+    %th Number of people
+    %th User
+    %th
+    %th
+    %th
+
+
+- @games.each do |game|
+  %tr
+    %td= game.title 
+    %td= game.sport 
+    %td= game.location 
+    %td= game.number_of_people
+    %td= game.user.name_with_initial 
+    %td= link_to 'Show', game
+    %td= link_to 'Edit', edit_game_path(game)
+    %td= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br 
+
+= link_to 'New Game', new_game_path
