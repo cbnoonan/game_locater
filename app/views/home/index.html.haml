@@ -1,7 +1,11 @@
-.main, ng-app="game"
+.main(ng-app='game')
 
-%h1 Hello, Rails!
+  .main-view(ng-controller='MainCtrl')
 
-.main-view, ng-controller="MainController"
+  %form{:id => "login_form", :name => "loginForm"}(ng-submit="login()")
+    %input{:type => "text", :name => "username"}
+    %input{:type => "password", :name => "password"}
+    %input{:type => "submit"}
+
 
 = link_to "My Game", games_path
